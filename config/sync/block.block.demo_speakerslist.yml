@@ -1,0 +1,25 @@
+uuid: f451a2a7-76ef-47ce-95a3-0168ca5f11bf
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:speakers:c4740b98-e788-43c3-8102-80b536442e14'
+  module:
+    - block_content
+  theme:
+    - demo
+id: demo_speakerslist
+theme: demo
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:c4740b98-e788-43c3-8102-80b536442e14'
+settings:
+  id: 'block_content:c4740b98-e788-43c3-8102-80b536442e14'
+  label: 'Speakers List'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
