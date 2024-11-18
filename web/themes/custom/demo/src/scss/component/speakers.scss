@@ -1,0 +1,177 @@
+.speakers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+    .speakers__header {
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+
+      .speakers__title {
+        margin: 0 !important;
+      }
+
+      .text-content {
+        text-align: center;
+        font-family: Metropolis, sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 18px;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        
+        p {
+          white-space: nowrap !important; // Prevent wrapping in the <p> tag
+        }
+      
+        span {
+          white-space: nowrap !important; // Prevent wrapping inside the <span> tag
+        }
+      }
+    }
+
+    .splide {
+      display: flex;
+      overflow: hidden;
+      width: 100%; // Ensures full width for slider
+      margin-top: 30px;
+  
+      .splide__track {
+        display: flex;
+        width: 100%;
+  
+        .splide__list {
+          display: flex;
+          justify-content: space-between;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          gap: 20px;
+        }
+  
+        .splide__slide {
+          // Additional styles for splide__slide
+        }
+
+        .speaker-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between; // Distribute space between elements inside the card
+          height: 100%;                   // Ensure the card takes full height
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          text-align: center;
+          opacity: 1; // Set opacity to 1 (or use animation for hover effects)
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgb(0 0 0 / 10%); // Optional: Card shadow
+  
+          &__image {
+            img {
+              width: 100px !important; // Ensure image width remains as intended
+              height: 100px !important; // Ensure image height remains fixed
+              object-fit: cover; // Ensure the image doesn't get distorted
+              border: 3px solid #fff !important; // White border around the image
+              border-radius: 50% !important; // Force circular shape
+              box-shadow: 0 4px 6px rgb(0 0 0 / 10%) !important; // Optional: image shadow
+            }
+          }
+  
+          &__name {
+            text-align: center;           // Center the name text
+            font-size: 18px;
+            font-weight: bold;
+          }
+  
+          &__designation,
+          &__organization {
+            text-align: center;           // Center the designation and organization text
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .speaker-popover {
+        position: fixed;
+        z-index: 999;
+        top: 10%;
+        left: 50%;
+        display: none; /* Initially hidden */
+        width: 80%;
+        max-width: 600px;
+        padding: 20px;
+        transition: opacity 0.3s ease, top 0.3s ease; /* Smooth transition for the popover */
+        transform: translateX(-50%);
+        opacity: 0;
+        border-radius: 8px;
+        background-color: white;
+        box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+    }
+
+    .speaker-popover .popover-content {
+        position: relative;
+    }
+
+    .speaker-popover .popover-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        transition: color 0.2s ease;
+        color: #333;
+        border: none;
+        background: transparent;
+        font-size: 20px;
+
+        &:hover {
+            color: #0073e6; /* Change color on hover for better UX */
+        }
+    }
+
+    .speaker-popover .popover-body {
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    // .speaker-popover img {
+    //     width: 100px;
+    //     height: 100px;
+    //     object-fit: cover;
+    //     border: 3px solid #fff;
+    //     border-radius: 50%;
+    //     box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
+    // }
+
+    // .speaker-popover h3,
+    // .speaker-popover p {
+    //     margin: 10px 0;
+    //     color: #333;
+    //     font-size: 16px;
+    // }
+
+    .speaker-popover .popover-body h3 {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .speakers__footer {
+      margin-top: 20px;
+      text-align: center;
+
+      .footer-cta {
+        transition: color 0.3s;
+        text-decoration: none;
+        color: #0073e6;
+        font-size: 16px;
+        font-weight: bold;
+
+        &:hover {
+          color: #005bb5;
+        }
+      }
+    }
+}

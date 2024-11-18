@@ -1,0 +1,50 @@
+<div class="speakers">
+    <div class="speakers__header">
+        <h2 class="speakers__title">{{ content.field_title }}</h2>
+        {{ content.body }}
+    </div>
+        
+    <div class="splide">
+        <div class="splide__track">
+
+            <ul class="splide__list">
+                {% for speaker in content.field_speakers['#items'] %}
+                <li class="splide__slide">
+                    <div class="speaker-card">
+                        <div class="speaker-card__image">
+                            {% if speaker.entity.field_photo.entity %}
+                            <img src="{{ file_url(speaker.entity.field_photo.entity.field_media_image.entity.uri.value) }}"
+                                alt="{{ speaker.entity.field_name.value }}" class="speaker-card__photo" />
+                            {% else %}
+                            <img src="/path/to/placeholder.jpg" alt="Placeholder image" class="speaker-card__photo" />
+                            {% endif %}
+                        </div>
+                        <h3 class="speaker-card__name">{{ speaker.entity.field_name.value }}</h3>
+                        <p class="speaker-card__designation">{{ speaker.entity.field_designation.value }}</p>
+                        <p class="speaker-card__organization">{{ speaker.entity.field_organization.value }}</p>
+                    </div>
+                </li>
+                {% else %}
+                <p>No speakers available</p>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!-- Popover for speaker details -->
+    <div class="speaker-popover" style="display: none;">
+        <div class="popover-content">
+            <button class="popover-close">X</button>
+            <div class="popover-body">
+                <h3 class="popover-name"></h3>
+                <p class="popover-designation"></p>
+                <p class="popover-organization"></p>
+                <div class="popover-photo"></div>
+                <p class="popover-description"></p>
+            </div>
+        </div>
+    </div>
+    <div class="speakers__footer">
+        <p>{{ content.field_footer_text }}</p>
+        {{ content.field_cta }}
+    </div>
+</div>
